@@ -31,7 +31,7 @@ Basically, <a href="https://maxpressy.com/scrollr/?mtm_campaign=wpPluginPage&mtm
 From your WordPress dashboard, navigate to the Plugins -> Add New, then search for the "Scrollr". Activate the plugin.
 
 = Manual Alternative =
-Alternatively, install "Scrollr" by uploading the files manually to your server. Download the plugin here from wordpress.org, upload the files to the plugin directiory of your WordPress installation. Go to the admin dashboard of your site, now. Navigate to the Plugins section and activate Scrollr plugin.
+Alternatively, install Scrollr by uploading the files manually to your server. Download the plugin here from wordpress.org, upload the files to the plugin directiory of your WordPress installation. Go to the admin dashboard of your site, now. Navigate to the Plugins section and activate Scrollr plugin.
 
 = Usage =
 Make a section linking:
