@@ -2,7 +2,7 @@
 Contributors: maxPressy
 Tags: navigation, smoth scroll, back-to-top, onepage, page scrolling, scroll
 Tested up to: 5.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires at least: 5.8
 Requires PHP: 7.3.5
 License: GPLv3
@@ -56,8 +56,9 @@ Alternatively, install "Scrollr" by uploading the files manually to your server.
 
 
 == Changelog ==
-= 1.0.2 - 2022- =
-* Small code cleaning, just to comply with JSLint suggestions
+= 1.0.2 - 2022-11-03 =
+* Comply with WordPress 6.1
+* Small code cleaning, to comply with JSLint and PHP lint
 
 = 1.0.1 - 2021-09-15 =
 * Improvment: Better handling of multiple links inside the scrollr scope, e.g. more than one scrollr link inside the paragraph
