@@ -1,5 +1,5 @@
 === Scrollr ===
-Contributors: maxPressy
+Contributors: MaxPressy
 Tags: navigation, smoth scroll, back-to-top, onepage, page scrolling, scroll
 Tested up to: 5.8
 Stable tag: 1.0.2
