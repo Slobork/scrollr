@@ -15,7 +15,7 @@
  * Author URI:          https://maxpressy.com
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Version:             1.0.2
+ * Version:             1.0.3
  * Text Domain:         scrollr
  * Domain Path:         none, no strings to translate yet.
  * Requires at least:   5.8
@@ -36,7 +36,7 @@ if (! function_exists('scrollr_version') ) {
     function scrollr_version()
     {
 
-        $plugin_version = '1.0.2';
+        $plugin_version = '1.0.3';
         return $plugin_version;
     }
 
