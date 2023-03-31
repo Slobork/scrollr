@@ -1,7 +1,7 @@
 === Scrollr ===
 Contributors: MaxPressy
 Tags: navigation, smoth scroll, back-to-top, onepage, page scrolling, scroll
-Tested up to: 6.1
+Tested up to: 6.2
 Stable tag: 1.0.3
 Requires at least: 5.8
 Requires PHP: 7.3.5
