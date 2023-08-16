@@ -56,11 +56,11 @@ if (! function_exists('scrollr_scripts') ) {
 
         $plugin_version = scrollr_version();
 
-        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), $plugin_version, true);
-            
+        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), $plugin_version, array('strategy' => 'defer'));
+
         // for debugging
-        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), $plugin_version, true );
-  
+        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), $plugin_version, array('strategy' => 'defer') );
+
 
     }
     add_action('wp_footer', 'scrollr_scripts');
