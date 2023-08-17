@@ -15,7 +15,7 @@
  * Author URI:          https://maxpressy.com
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Version:             1.0.3
+ * Version:             1.0.4
  * Text Domain:         scrollr
  * Domain Path:         none, no strings to translate yet.
  * Requires at least:   5.8
@@ -36,7 +36,7 @@ if (! function_exists('scrollr_version') ) {
     function scrollr_version()
     {
 
-        $plugin_version = '1.0.3';
+        $plugin_version = '1.0.4';
         return $plugin_version;
     }
 
@@ -56,11 +56,11 @@ if (! function_exists('scrollr_scripts') ) {
 
         $plugin_version = scrollr_version();
 
-        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), $plugin_version, true);
-            
+        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), $plugin_version, array('strategy' => 'defer'));
+
         // for debugging
-        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), $plugin_version, true );
-  
+        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), $plugin_version, array('strategy' => 'defer') );
+
 
     }
     add_action('wp_footer', 'scrollr_scripts');
