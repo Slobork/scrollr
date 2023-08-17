@@ -2,7 +2,7 @@
 Contributors: MaxPressy
 Tags: navigation, smoth scroll, back-to-top, onepage, page scrolling, scroll
 Tested up to: 6.3
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires at least: 5.8
 Requires PHP: 7.3.5
 License: GPLv3
@@ -56,6 +56,9 @@ Create a back to top button/link:
 
 
 == Changelog ==
+= 1.0.4 - 2022-08-17 =
+* Update: Set defer strategy for files enqueueing
+
 = 1.0.3 - 2022-11-03 =
 * Bumping the "Tested up to" to 6.1, missed on previous update
 
