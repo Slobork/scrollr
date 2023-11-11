@@ -52,3 +52,27 @@ if (! function_exists('scrollr_scripts') ) {
     add_action('wp_footer', 'scrollr_scripts');
 
 }
+
+
+if (! function_exists('scrollr_enqueue_block_variations') ) {
+
+
+    /**
+     * Enqueue for Block variations.
+     *
+     * @return void Enqueueing assets.
+     */
+    // phpcs:ignore
+    function scrollr_enqueue_block_variations()
+    {
+        wp_enqueue_script(
+            'scrollr-enqueue-block-variations',
+            plugin_dir_url(__FILE__) .'library/js/min/variations.js',
+            array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+            SCROLLR_VERSION,
+            array('strategy' => 'defer')
+        );
+    }
+    add_action('enqueue_block_editor_assets', 'scrollr_enqueue_block_variations');
+
+}

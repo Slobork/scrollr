@@ -15,25 +15,25 @@ jQuery(document).ready(function ($) {
 
     // on click behavior 1 - with a link (a) on the same level as a .scrollr class
     $('.scrollr').on('click', function (e) {
-        
+
         // get anchor (href value)
         var exists_a_1 = $(this).attr('href') ? true : false,
                     a_1 = exists_a_1 === true ? $(this).attr('href') : '';
 
         // if href's value starts with '#' & panel present on the page
         if (exists_a_1 === true && a_1.charAt(0) === '#' && $(a_1).length) {
-            
+
             e.preventDefault();
-            
+
             // scroll to the section
             $('body,html').animate({
                 scrollTop: $(a_1).offset().top
             }, 800);
-            
+
         }
-        
+
     });
-    
+
     // on click behavior 2 - with a link (a) delegated under the .scrollr class, e.g. inside the paragraph
     $('.scrollr').on('click', 'a', function (e) {
 
@@ -56,22 +56,22 @@ jQuery(document).ready(function ($) {
     });
 
 
-    
-    /* 
+
+    /**
      * One Pager
      */
     if ( $('.scrollr').length ) {
 
         // mark the sections to be watched
         $.each($('.scrollr'), function () {
-            
+
             // get anchor (href value)
             var exists_a_1 = $(this).attr('href') ? true : false, // href value is on the same level as the .scrollr
                 exists_a_2 = $(this).find('a').attr('href') ? true : false, // in p or button wrap
                 a_1        = exists_a_1 === true ? $(this).attr('href') : '', // get href attr
                 a_2        = exists_a_2 === true ? $(this).find('a').attr('href') : ''; // get href attr
 
-            // if href's value starts with '#' & "linking to section" present on the page
+            // if href's value starts with '#' & "linking to section" i.e. a_1 is present on the page
             if(exists_a_1 === true && a_1.charAt(0) === '#' && $(a_1).length) {
 
                 $(this).addClass('scrollr-anchor');
@@ -82,9 +82,9 @@ jQuery(document).ready(function ($) {
 
             // if in p or button wrap
             } else if ( exists_a_2 === true && a_2.charAt(0) === '#' && $(a_2).length ) {
- 
+
                 $(this).find('a').addClass('scrollr-anchor');
-                
+
                 $(a_2)
                 .addClass('scrollr-section') // mark the section to be observed
                 .attr('data-scrollr-section', a_2); // match the data with the .scrollr-anchor
@@ -126,53 +126,53 @@ jQuery(document).ready(function ($) {
         entries.forEach(function (entry) {
 
             var id = entry.target.getAttribute('data-scrollr-section');
-            
+
             if (entry.isIntersecting) {
 
-                /* 
-                * Mark scrollr anchor, i.e. add styling based on the vertical or horizontal mark (set in UI).
-                * It can be set individually on the link's wrapper, i.e. the 'li' of the menu. 
-                * Additionally, set it on the paragraph/column/etc. which contains one or more .scrollr
-                */
-                
+                /**
+                 * Mark scrollr anchor, i.e. add styling based on the vertical or horizontal mark (set in UI).
+                 * It can be set individually on the link's wrapper, i.e. the 'li' of the menu.
+                 * Additionally, set it on the paragraph/column/etc. which contains one or more .scrollr
+                 */
+
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').css({
                         'border-bottom' : '2px solid',
                         'padding-bottom': '10px',
-                    });    
-                    
-                }    
-                
+                    });
+
+                }
+
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').css({
                         'border-left': '4px solid',
-                        'padding-left': '10px', 
-                    });    
-                    
-                }    
-                
+                        'padding-left': '10px',
+                    });
+
+                }
+
             } else {
-                
-                
+
+
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').removeClass('scrollr-active');
-                    
+
                     $('.scrollr-anchor[href="' +id +'"]').css({
                         'border-bottom' : '',
                         'padding-bottom': '',
                     });
 
-                } 
+                }
 
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
@@ -181,7 +181,7 @@ jQuery(document).ready(function ($) {
 
                     $('.scrollr-anchor[href="' +id +'"]').css({
                         'border-left': '',
-                        'padding-left': '', 
+                        'padding-left': '',
                     });
 
                 }
@@ -196,50 +196,52 @@ jQuery(document).ready(function ($) {
     // watching by IntersectionObserver
     if (window.IntersectionObserver) {
         scrollrToObserver();
-    }     
+    }
     //else {
-    //    console.log("IntersectionObserver not supported.");    
+    //    console.log("IntersectionObserver not supported.");
     //}
 
 
 
 
-    /*
-    *  totop anchor
-    */
-    if ( $('.scrollr-top').length ) {
+    /**
+     *  totop anchor
+     * "scrollr-top" would be added to individual block, e.g. button
+     * "scrollr-topper" comes intgrated as a wrapper of the 'Scrollr - to top' block
+     */
+    if ( $('.scrollr-top, .scrollr-topper > *').length ) {
 
         // initally scrollr-top is hidden
-        $('.scrollr-top').hide(); 
-        
+        $('.scrollr-top, .scrollr-topper > *').hide();
+
         // scrollr-top button on window scrolling)
         $(window).scroll(function () {
-        
+
             if ($(this).scrollTop() > 400) {
-            
-                $('.scrollr-top')
+
+                $('.scrollr-top, .scrollr-topper > *')
                 .css('display', 'flex'); //using flex as display, which will keep the order of the icon & label when used in button
-            
+
             } else {
-                
-                $('.scrollr-top')
+
+                $('.scrollr-top, .scrollr-topper > *')
                 .hide(500);
-                
+
             }
-            
+
         });
-        
-        
+
+
         // ...and action on click for the scrollr-top button
-        $('.scrollr-top').on('click', function (e) {
+        $('.scrollr-top, .scrollr-topper > *').on('click', function (e) {
             e.preventDefault();
-            
+
             $('body,html').animate({
                 scrollTop: 0
             }, 800);
-            
+
         });
-        
+
     } // end scrollr-top.length
 
 
