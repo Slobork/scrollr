@@ -15,7 +15,7 @@
  * Author URI:          https://maxpressy.com
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Version:             1.0.4
+ * Version:             1.0.5
  * Text Domain:         scrollr
  * Domain Path:         none, no strings to translate yet.
  * Requires at least:   5.8
