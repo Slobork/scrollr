@@ -15,7 +15,7 @@
  * Author URI:          https://maxpressy.com
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Version:             1.0.4
+ * Version:             1.0.5
  * Text Domain:         scrollr
  * Domain Path:         none, no strings to translate yet.
  * Requires at least:   5.8
@@ -25,23 +25,13 @@ if (! defined('ABSPATH') ) {
     exit;
 }
 
-if (! function_exists('scrollr_version') ) {
-
-    /**
-     * Version.
-     *
-     * @return string Plugin's version.
-     */
-    // phpcs:ignore
-    function scrollr_version()
-    {
-
-        $plugin_version = '1.0.4';
-        return $plugin_version;
-    }
-
+// Plugin data (getting plugin version, name, etc.)
+if (! function_exists('get_plugin_data')) {
+    include_once ABSPATH .'wp-admin/includes/plugin.php';
 }
-
+$plugin_data = get_plugin_data(__FILE__);
+define('SCROLLR', ($plugin_data && $plugin_data['Name']) ? $plugin_data['Name'] : 'Scrollr');
+define('SCROLLR_VERSION', ($plugin_data && $plugin_data['Version']) ? $plugin_data['Version'] : '1.0.0');
 
 if (! function_exists('scrollr_scripts') ) {
 
@@ -53,16 +43,36 @@ if (! function_exists('scrollr_scripts') ) {
      // phpcs:ignore
     function scrollr_scripts() 
     {
-
-        $plugin_version = scrollr_version();
-
-        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), $plugin_version, array('strategy' => 'defer'));
+        wp_enqueue_script('scrollr', plugins_url('/library/js/min/main.js', __FILE__), array( 'jquery' ), SCROLLR_VERSION, array('strategy' => 'defer'));
 
         // for debugging
-        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), $plugin_version, array('strategy' => 'defer') );
-
+        //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), SCROLLR_VERSION, array('strategy' => 'defer') );
 
     }
     add_action('wp_footer', 'scrollr_scripts');
+
+}
+
+
+if (! function_exists('scrollr_enqueue_block_variations') ) {
+
+
+    /**
+     * Enqueue for Block variations.
+     *
+     * @return void Enqueueing assets.
+     */
+    // phpcs:ignore
+    function scrollr_enqueue_block_variations()
+    {
+        wp_enqueue_script(
+            'scrollr-enqueue-block-variations',
+            plugin_dir_url(__FILE__) .'library/js/min/variations.js',
+            array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
+            SCROLLR_VERSION,
+            array('strategy' => 'defer')
+        );
+    }
+    add_action('enqueue_block_editor_assets', 'scrollr_enqueue_block_variations');
 
 }

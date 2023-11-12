@@ -1,0 +1,1 @@
+wp.domReady(function(){wp.blocks.registerBlockVariation("core/buttons",{name:"scrollr-push-to-top",title:"Scrollr - to top",description:"Push the page up to the top",icon:"arrow-up",isDefault:!1,attributes:{className:"scrollr-topper"},innerBlocks:[["core/button",{text:"↑"}]]})});

@@ -1,8 +1,8 @@
 === Scrollr ===
 Contributors: MaxPressy
 Tags: navigation, smoth scroll, back-to-top, onepage, page scrolling, scroll
-Tested up to: 6.3
-Stable tag: 1.0.4
+Tested up to: 6.4
+Stable tag: 1.0.5
 Requires at least: 5.8
 Requires PHP: 7.3.5
 License: GPLv3
@@ -54,8 +54,11 @@ Create a back to top button/link:
 3. Scrolling example
 
 
-
 == Changelog ==
+= 1.0.5 - 2023-11-13 =
+* Change the way the plugin version is retrieved and printed
+* Add "Push to top" as a block
+
 = 1.0.4 - 2022-08-17 =
 * Update: Set defer strategy for files enqueueing
 
