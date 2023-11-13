@@ -48,8 +48,32 @@ if (! function_exists('scrollr_scripts') ) {
         // for debugging
         //wp_enqueue_script( 'scrollr', plugins_url( '/library/js/src/main.js', __FILE__ ), array( 'jquery' ), SCROLLR_VERSION, array('strategy' => 'defer') );
 
+        // add local vars for translation, accesed through the JS
+        $local_var_array  = array(
+            'back_to_top'  => esc_html__('Back to top', 'scrollr'),
+        );
+
+        wp_localize_script('scrollr', 'scrollr_localize', $local_var_array);
+
     }
     add_action('wp_footer', 'scrollr_scripts');
+
+}
+
+
+if (! function_exists('scrollr_textdomain') ) {
+
+    /**
+     * Load plugin's textdomain.
+     * 
+     * @return void Hooking a load_plugin_textdomain().
+     */
+    // phpcs:ignore
+    function scrollr_textdomain()
+    {
+        load_plugin_textdomain('scrollr', false, basename(dirname(__FILE__)) . '/languages');
+    }
+    add_action('init', 'scrollr_textdomain');
 
 }
 
