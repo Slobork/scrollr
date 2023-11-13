@@ -207,24 +207,37 @@ jQuery(document).ready(function ($) {
     /**
      *  totop anchor
      * "scrollr-top" would be added to individual block, e.g. button
-     * "scrollr-topper" comes intgrated as a wrapper of the 'Scrollr - to top' block
+     * and it comes intgrated as a wrapper of the 'Scrollr - to top' block
      */
-    if ( $('.scrollr-top, .scrollr-topper > *').length ) {
+    if ( $('.scrollr-top').length ) {
 
-        // initally scrollr-top is hidden
-        $('.scrollr-top, .scrollr-topper > *').hide();
+        // initally floating buttons are hidden
+        $('.scrollr-top > .float').hide();
+
+        $('.scrollr-top > .float').css({
+            'position': 'fixed',
+            'left': '3vw',
+            'bottom': '3vh',
+            'z-index': '999',
+        });
+        
+        // alignments
+        $('.scrollr-top.is-content-justification-right > .float').css({'left': 'auto', 'right': '3vw'});
+        $('.scrollr-top.is-content-justification-center > .float').css({'left': '50%', 'transform': 'translateX(-50%)'});
+        $('.scrollr-top > *').attr('title', scrollr_localize.back_to_top); // with '> *' target is the anchor inside the usual paragraph as well (besides the '> float')
+        $('.scrollr-top > .reduce-opacity').css('opacity', .8);
 
         // scrollr-top button on window scrolling)
         $(window).scroll(function () {
 
             if ($(this).scrollTop() > 400) {
 
-                $('.scrollr-top, .scrollr-topper > *')
+                $('.scrollr-top > .float')
                 .css('display', 'flex'); //using flex as display, which will keep the order of the icon & label when used in button
 
             } else {
 
-                $('.scrollr-top, .scrollr-topper > *')
+                $('.scrollr-top > .float')
                 .hide(500);
 
             }
@@ -233,7 +246,8 @@ jQuery(document).ready(function ($) {
 
 
         // ...and action on click for the scrollr-top button
-        $('.scrollr-top, .scrollr-topper > *').on('click', function (e) {
+        // With '> *' target is the anchor inside the usual paragraph as well (besides the '> float')
+        $('.scrollr-top > *').on('click', function (e) {
             e.preventDefault();
 
             $('body,html').animate({

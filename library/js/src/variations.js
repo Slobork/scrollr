@@ -12,14 +12,15 @@ wp.domReady( function() {
         title: 'Scrollr - to top',
         description: 'Push the page up to the top',
         icon: 'arrow-up',
+        category: 'widgets',
         isDefault: false,
         attributes: {
-            className: 'scrollr-topper',
+            className: 'scrollr-top',
         },
         innerBlocks: [
             [
                 'core/button',
-                {text: '↑'}
+                {text: '↑', className: 'float reduce-opacity'}
             ]
         ]
     } );
