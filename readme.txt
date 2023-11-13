@@ -11,10 +11,14 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 == Description ==
 <a href="https://maxpressy.com/scrollr/?mtm_campaign=wpPluginPage&mtm_kwd=scrollr&mtm_placement=top" target="_blank">Scrollr</a> is a lightweight tool that helps you to link to a page's section and to smothly scroll to it. This way, it bypasses the browsers' "bumping-jumping" behaviour for the in-page linking.
 
-Another available option is scrolling up to the page's top, i.e. usually labeled as "back to top".
-
+= Scroll to page's section =
 Currently there's no UI settings, scrolling works with the plugin's default settings. To make the linking to the targeting page's section, you just have to add a "scrollr" class. The idea is to keep things lightweight and simple. If there's many user requests in the future, we'll consider making the UI options like scrolling speed etc.
 
+= Push to top =
+Another available option is scrolling up to the page's top, i.e. usually labeled as "back to top".
+For this option you can use the button block that comes with the plugin. It is available from the regular WordPress block inserter. Just search for "Scrollr" or "Push to top" from the block inserter.
+
+= Conclusion =
 Basically, <a href="https://maxpressy.com/scrollr/?mtm_campaign=wpPluginPage&mtm_kwd=scrollr&mtm_placement=bottom" target="_blank">Scrollr</a> may help you to create:
 <ul>
     <li>One page navigation</li>
@@ -52,12 +56,14 @@ Create a back to top button/link:
 1. Set section’s HTML anchor
 2. Add “scrollr” class to a link
 3. Scrolling example
+4. "Push to top" block
 
 
 == Changelog ==
 = 1.0.5 - 2023-11-13 =
 * Change the way the plugin version is retrieved and printed
 * Add "Push to top" as a block
+* Add languages folder with .pot file for the translation strings
 
 = 1.0.4 - 2022-08-17 =
 * Update: Set defer strategy for files enqueueing

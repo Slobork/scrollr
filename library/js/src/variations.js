@@ -10,16 +10,17 @@ wp.domReady( function() {
     wp.blocks.registerBlockVariation( 'core/buttons', {
         name: 'scrollr-push-to-top',
         title: 'Scrollr - to top',
-        description: 'Push the page up to the top',
+        description: 'Push (back) the page up to the top',
         icon: 'arrow-up',
+        category: 'widgets',
         isDefault: false,
         attributes: {
-            className: 'scrollr-topper',
+            className: 'scrollr-top',
         },
         innerBlocks: [
             [
                 'core/button',
-                {text: '↑'}
+                {text: '↑', className: 'float reduce-opacity'}
             ]
         ]
     } );
