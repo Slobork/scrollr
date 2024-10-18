@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
         var exists_a_1 = $(this).attr('href') ? true : false,
                     a_1 = exists_a_1 === true ? $(this).attr('href') : '';
 
-        // if href's value starts with '#' & panel present on the page
+        // if href's value starts with '#' & a section present on the page
         if (exists_a_1 === true && a_1.charAt(0) === '#' && $(a_1).length) {
 
             e.preventDefault();
@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
         var exists_a_2 = $(this).attr('href') ? true : false,
                     a_2 =  exists_a_2 === true ? $(this).attr('href') : '';
 
-        // if href's value starts with '#' & panel present on the page
+        // if href's value starts with '#' & a section present on the page
         if (exists_a_2 === true && a_2.charAt(0) === '#' && $(a_2).length) {
 
             e.preventDefault();
