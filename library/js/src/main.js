@@ -138,11 +138,11 @@ jQuery(document).ready(function ($) {
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-bottom' : '2px solid',
-                        'padding-bottom': '10px',
+                    $('.scrollr-mark-hor .scrollr-anchor[href="' +id +'"]')
+                        .addClass('scrollr-nav-active')
+                        .css({
+                            'border-bottom' : '2px solid',
+                            'padding-bottom': '4px',
                     });
 
                 }
@@ -150,11 +150,11 @@ jQuery(document).ready(function ($) {
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-left': '4px solid',
-                        'padding-left': '10px',
+                    $('.scrollr-mark-ver .scrollr-anchor[href="' +id +'"]')
+                        .addClass('scrollr-nav-active')
+                        .css({
+                            'border-left': '4px solid',
+                            'padding-left': '8px',
                     });
 
                 }
@@ -165,11 +165,11 @@ jQuery(document).ready(function ($) {
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').removeClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-bottom' : '',
-                        'padding-bottom': '',
+                    $('.scrollr-mark-hor .scrollr-anchor[href="' +id +'"]')
+                        .removeClass('scrollr-nav-active')
+                        .css({
+                            'border-bottom' : '',
+                            'padding-bottom': '',
                     });
 
                 }
@@ -177,11 +177,11 @@ jQuery(document).ready(function ($) {
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').removeClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-left': '',
-                        'padding-left': '',
+                    $('.scrollr-mark-ver .scrollr-anchor[href="' +id +'"]')
+                        .removeClass('scrollr-nav-active')
+                        .css({
+                            'border-left': '',
+                            'padding-left': '',
                     });
 
                 }
