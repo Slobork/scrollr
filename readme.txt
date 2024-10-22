@@ -2,11 +2,13 @@
 Contributors: MaxPressy
 Tags: navigation, back-to-top, onepage, page scrolling, scroll
 Tested up to: 6.6
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires at least: 5.8
 Requires PHP: 7.3.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
+
+Scroll smoothly to a page's section or push it back to the top.
 
 == Description ==
 <a href="https://maxpressy.com/scrollr/?mtm_campaign=wpPluginPage&mtm_kwd=scrollr&mtm_placement=top" target="_blank">Scrollr</a> is a lightweight tool that helps you to link to a page's section and to smothly scroll to it. This way, it bypasses the browsers' "bumping-jumping" behaviour for the in-page linking.
@@ -60,6 +62,9 @@ Create a back to top button/link:
 
 
 == Changelog ==
+= 1.0.6 - 2024-10-23 =
+* Improved the marking of the current section in the stcky menu if created
+
 = 1.0.5 - 2023-11-13 =
 * Change the way the plugin version is retrieved and printed
 * Add "Push to top" as a block
