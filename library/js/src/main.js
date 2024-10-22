@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
         var exists_a_1 = $(this).attr('href') ? true : false,
                     a_1 = exists_a_1 === true ? $(this).attr('href') : '';
 
-        // if href's value starts with '#' & panel present on the page
+        // if href's value starts with '#' & a section present on the page
         if (exists_a_1 === true && a_1.charAt(0) === '#' && $(a_1).length) {
 
             e.preventDefault();
@@ -41,7 +41,7 @@ jQuery(document).ready(function ($) {
         var exists_a_2 = $(this).attr('href') ? true : false,
                     a_2 =  exists_a_2 === true ? $(this).attr('href') : '';
 
-        // if href's value starts with '#' & panel present on the page
+        // if href's value starts with '#' & a section present on the page
         if (exists_a_2 === true && a_2.charAt(0) === '#' && $(a_2).length) {
 
             e.preventDefault();
@@ -138,11 +138,11 @@ jQuery(document).ready(function ($) {
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-bottom' : '2px solid',
-                        'padding-bottom': '10px',
+                    $('.scrollr-mark-hor .scrollr-anchor[href="' +id +'"]')
+                        .addClass('scrollr-nav-active')
+                        .css({
+                            'border-bottom' : '2px solid',
+                            'padding-bottom': '4px',
                     });
 
                 }
@@ -150,11 +150,11 @@ jQuery(document).ready(function ($) {
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').addClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-left': '4px solid',
-                        'padding-left': '10px',
+                    $('.scrollr-mark-ver .scrollr-anchor[href="' +id +'"]')
+                        .addClass('scrollr-nav-active')
+                        .css({
+                            'border-left': '4px solid',
+                            'padding-left': '8px',
                     });
 
                 }
@@ -165,11 +165,11 @@ jQuery(document).ready(function ($) {
                 // if horizontal (hor) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-hor').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').removeClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-bottom' : '',
-                        'padding-bottom': '',
+                    $('.scrollr-mark-hor .scrollr-anchor[href="' +id +'"]')
+                        .removeClass('scrollr-nav-active')
+                        .css({
+                            'border-bottom' : '',
+                            'padding-bottom': '',
                     });
 
                 }
@@ -177,11 +177,11 @@ jQuery(document).ready(function ($) {
                 // if vertical (ver) marker is set in UI
                 if ( $('.scrollr-anchor[href="' +id +'"]').closest('.scrollr-mark-ver').length ) {
 
-                    $('.scrollr-anchor[href="' +id +'"]').removeClass('scrollr-active');
-
-                    $('.scrollr-anchor[href="' +id +'"]').css({
-                        'border-left': '',
-                        'padding-left': '',
+                    $('.scrollr-mark-ver .scrollr-anchor[href="' +id +'"]')
+                        .removeClass('scrollr-nav-active')
+                        .css({
+                            'border-left': '',
+                            'padding-left': '',
                     });
 
                 }
