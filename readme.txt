@@ -63,7 +63,7 @@ Create a back to top button/link:
 
 == Changelog ==
 = 1.0.6 - 2024-10-23 =
-* Improved the marking of the current section in the stcky menu if created
+* Improved the marking of the current section in the sticky menu if created
 
 = 1.0.5 - 2023-11-13 =
 * Change the way the plugin version is retrieved and printed
