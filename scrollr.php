@@ -15,7 +15,7 @@
  * Author URI:          https://maxpressy.com
  * License:             GPL v2 or later
  * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Version:             1.0.6
+ * Version:             1.0.7
  * Text Domain:         scrollr
  * Domain Path:         none, no strings to translate yet.
  * Requires at least:   5.8
@@ -29,7 +29,7 @@ if (! defined('ABSPATH') ) {
 if (! function_exists('get_plugin_data')) {
     include_once ABSPATH .'wp-admin/includes/plugin.php';
 }
-$plugin_data = get_plugin_data(__FILE__);
+$plugin_data = get_plugin_data(__FILE__, true, false);
 define('SCROLLR', ($plugin_data && $plugin_data['Name']) ? $plugin_data['Name'] : 'Scrollr');
 define('SCROLLR_VERSION', ($plugin_data && $plugin_data['Version']) ? $plugin_data['Version'] : '1.0.0');
 

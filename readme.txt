@@ -1,8 +1,8 @@
 === Scrollr ===
 Contributors: MaxPressy
 Tags: navigation, back-to-top, onepage, page scrolling, scroll
-Tested up to: 6.6
-Stable tag: 1.0.6
+Tested up to: 6.7
+Stable tag: 1.0.7
 Requires at least: 5.8
 Requires PHP: 7.3.5
 License: GPLv3
@@ -62,6 +62,9 @@ Create a back to top button/link:
 
 
 == Changelog ==
+= 1.0.7 - 2024-11-29 =
+* Fix: Text domain loading, due to the missing parameters on the get_plugin_data
+
 = 1.0.6 - 2024-10-23 =
 * Improved the marking of the current section in the sticky menu if created
 
