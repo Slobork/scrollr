@@ -3,7 +3,7 @@
  * Plugin Name:         Scrollr
  * Description:         Scroll smoothly to a page's section.
  *
- * PHP version  7.3.5
+ * PHP version  7.4
  *
  * @category Scrolling
  * @package  Scrollr
